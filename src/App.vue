@@ -1,13 +1,22 @@
 <template>
-  <BlogHeader />
+  <div id="app">
+    <BlogHeader />
+    <div class="container">
+      <blog-card></blog-card>
+      <blog-card></blog-card>
+      <blog-card></blog-card>
+    </div>
+  </div>
 </template>
 
 <script>
 import BlogHeader from "./components/BlogHeader";
+import BlogCard from "./components/BlogCard";
 export default {
   name: "App",
   components: {
     BlogHeader,
+    BlogCard,
   },
 };
 </script>
@@ -17,9 +26,18 @@ export default {
   padding: 0;
   margin: 0;
 }
-body{
-  font-family: 'Lato', sans-serif;
+body {
+  font-family: "Lato", sans-serif;
 }
+
+.container {
+  padding: 0 30px;
+  max-width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
