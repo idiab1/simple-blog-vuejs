@@ -1,14 +1,14 @@
 <template>
   <div class="blog-card">
     <div class="card-image">
-      <img src="../assets/images/blog-post.jpg" alt="Card Title" />
+      <div class="ratio-content">
+        <img :src="data.image" alt="{{data.title}}" />
+      </div>
     </div>
     <div class="card-content">
-      <h2 class="card-title">Card Title</h2>
+      <h2 class="card-title">{{ data.title }}</h2>
       <p class="summary">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia
-        porro maxime facere magnam accusantium autem dolorem quibusdam, minus
-        ducimus dolor optio numquam, fugit illum!
+        {{ data.summary }}
       </p>
       <a class="card-btn" href="#">Show More</a>
     </div>
@@ -18,6 +18,11 @@
 <script>
 export default {
   name: "BlogCard",
+  props: {
+    data: {
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -26,7 +31,7 @@ export default {
   width: 31%;
   box-sizing: border-box;
   margin: 15px 10px 15px;
-  border: 1px solid #444;
+  box-shadow: -1px -1px 10px 1px rgb(197 197 197 / 47%);
   @media (max-width: 900px) {
     width: 47%;
   }
@@ -37,8 +42,23 @@ export default {
 
   // Card Image
   .card-image {
-    img {
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 66.67%;
+    }
+    .ratio-content {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   .card-content {
