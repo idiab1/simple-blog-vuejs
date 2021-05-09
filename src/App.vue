@@ -2,10 +2,12 @@
   <div id="app">
     <BlogHeader />
     <div class="blogs-content">
-      <div class="container">
-        <blog-card></blog-card>
-        <blog-card></blog-card>
-        <blog-card></blog-card>
+      <div class="container" v-if="blogs">
+        <blog-card
+          v-for="blog in blogs"
+          :key="blog.id"
+          :data="blog"
+        ></blog-card>
       </div>
     </div>
   </div>
@@ -20,10 +22,10 @@ import axios from "axios";
 
 export default {
   name: "App",
-  data(){
-    return{
-      blogs: null
-    }
+  data() {
+    return {
+      blogs: null,
+    };
   },
   components: {
     BlogHeader,
