@@ -10,7 +10,7 @@
         porro maxime facere magnam accusantium autem dolorem quibusdam, minus
         ducimus dolor optio numquam, fugit illum!
       </p>
-      <a href="#">Show More</a>
+      <a class="card-btn" href="#">Show More</a>
     </div>
   </div>
 </template>
@@ -21,4 +21,52 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.blog-card {
+  width: 31%;
+  box-sizing: border-box;
+  margin: 15px 10px 15px;
+  border: 1px solid #444;
+  @media (max-width: 900px) {
+    width: 47%;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  // Card Image
+  .card-image {
+    img {
+      width: 100%;
+    }
+  }
+  .card-content {
+    padding: 20px 15px;
+    background-color: #fcfcfc;
+    // Card Title
+    .card-title {
+      font-size: 23px;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    // Summary of Descrition
+    .summary {
+      font-size: 18px;
+      padding: 10px 0;
+      color: #5a5858;
+      line-height: 1.5;
+    }
+    // Card Button
+    .card-btn {
+      font-size: 17px;
+      text-transform: capitalize;
+      text-decoration: underline;
+      color: #000;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+</style>
