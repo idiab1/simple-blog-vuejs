@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <BlogHeader />
-    <div class="container">
-      <blog-card></blog-card>
-      <blog-card></blog-card>
-      <blog-card></blog-card>
+    <div class="blogs-content">
+      <div class="container">
+        <blog-card></blog-card>
+        <blog-card></blog-card>
+        <blog-card></blog-card>
+      </div>
     </div>
   </div>
 </template>
@@ -21,7 +23,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 * {
   padding: 0;
   margin: 0;
@@ -29,13 +31,15 @@ export default {
 body {
   font-family: "Lato", sans-serif;
 }
-
-.container {
-  padding: 0 30px;
-  max-width: 1024px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+.blogs-content {
+  padding: 40px 0;
+  .container {
+    padding: 0 30px;
+    max-width: 1124px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 /* #app {
