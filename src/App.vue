@@ -14,11 +14,25 @@
 <script>
 import BlogHeader from "./components/BlogHeader";
 import BlogCard from "./components/BlogCard";
+
+// Import Axios package for endpoints
+import axios from "axios";
+
 export default {
   name: "App",
+  data(){
+    return{
+      blogs: null
+    }
+  },
   components: {
     BlogHeader,
     BlogCard,
+  },
+  mounted() {
+    axios.get("http://localhost:3000/blog").then((res) => {
+      this.blogs = res.data;
+    });
   },
 };
 </script>
