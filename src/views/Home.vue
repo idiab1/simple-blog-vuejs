@@ -23,13 +23,14 @@
 </template>
 
 <script>
-import BlogHeader from "./components/BlogHeader";
-import BlogCard from "./components/BlogCard";
+import BlogHeader from "../components/BlogHeader";
+import BlogCard from "../components/BlogCard";
 
 // Import Axios package for endpoints
 import axios from "axios";
 
 export default {
+  name: 'Home',
   data() {
     return {
       blogs: null,
