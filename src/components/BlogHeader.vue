@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header-info">
-      <h1>Blog</h1>
+      <slot></slot>
     </div>
   </header>
 </template>
@@ -21,12 +21,12 @@ export default {
   align-items: center;
   background: url("../assets/images/bg.jpeg") no-repeat center center;
   background-size: cover;
-  
-  &::before{
+
+  &::before {
     position: absolute;
-    content: '';
-    top:0;
-    left:0;
+    content: "";
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(60deg, rgb(0 142 133), rgb(0 142 133 / 36%));
