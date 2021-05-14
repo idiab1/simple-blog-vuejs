@@ -1,6 +1,13 @@
 <template>
   <div>
-    <BlogHeader />
+    <!-- Header -->
+    <blog-header>
+      <div class="header-info">
+        <h1>Blog</h1>
+      </div>
+    </blog-header>
+    <!-- End of header -->
+    <!-- Content -->
     <div class="blogs-content">
       <div class="container" v-if="blogs">
         <blog-card
@@ -30,7 +37,7 @@ import BlogCard from "../components/BlogCard";
 import axios from "axios";
 
 export default {
-  name: 'Home',
+  name: "Home",
   data() {
     return {
       blogs: null,
@@ -68,13 +75,6 @@ export default {
 
 .blogs-content {
   padding: 40px 0;
-  .container {
-    padding: 0 30px;
-    max-width: 1124px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 
 // End of Blogs Content
@@ -91,5 +91,4 @@ export default {
     cursor: pointer;
   }
 }
-
 </style>
