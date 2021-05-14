@@ -22,6 +22,12 @@ body {
 .text-center {
   text-align: center;
 }
-
+.container {
+  padding: 0 30px;
+  max-width: 1124px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
 // End of global rules
 </style>
