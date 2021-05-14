@@ -10,7 +10,7 @@
       <p class="summary">
         {{ data.summary }}
       </p>
-      <a class="card-btn" href="#">Show More</a>
+      <router-link :to="`/blog/${data.id}`">Show More</router-link>
     </div>
   </div>
 </template>
